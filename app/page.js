@@ -11,30 +11,26 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@radix-ui/react-accordion"
 
-export function ModeToggle() {
+const ModeToggle = () => {
   const { setTheme } = useTheme()
-
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
-          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          <span className="sr-only">Toggle theme</span>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
-          Light
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
-          Dark
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
-          System
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <div className="grid gap-[32px]">
+      <div className="grid grid-cols-2 gap-[32px]" >
+        this is Graph
+        <div className="grid gap-[32px]">
+          <h2 className="p-4 border">card one</h2>
+          <h2 className="p-4 border">card one</h2>
+        </div>
+      </div>
+      <div className="grid grid-cols-3 gap-[32px]">
+        <h1 className="p-4 border">card three</h1>
+        <h1 className="p-4 border">card three</h1>
+        <h1 className="p-4 border">card three</h1>
+      </div>
+    </div>
   )
 }
+
+export default ModeToggle
